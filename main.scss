@@ -1,0 +1,118 @@
+@import "./scss/variables.scss";
+@import "./scss/mixings.scss";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+li {
+    list-style-type: none;
+  }
+  
+body{
+    background-color: #000000;
+    font-family: $ff-primary;
+  
+    #app {
+      width: 1440px;
+      height: 2000px;
+      display: flex;
+      justify-content: center;
+      @include set_gradient(113.49deg, $primary-bg, $secondary-bg);
+    }
+}
+
+.header {
+    width: 1197px;
+    height: 70px;
+    @include d-flex(space-between, center);
+    margin-top: $margin-xl;
+
+
+    &__title {
+        width: 20%;
+        font-size: $fs-m + 12px;
+  
+        p {
+          color: $primary-text-color;
+        } 
+      
+        span {
+          @include set_gradient( 214.02deg, $backgraund-button-active-first, $backgraund-button-active-secondary);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+        }
+
+    }
+
+    &__seach {
+        display: flex;
+        margin-bottom: $margin-l;
+  
+        .seach__logo {
+          gap: 10px;    
+          position: absolute;
+          width: 20px;
+          height: 20px;
+          margin: $margin-xs - 2px;
+          gap: 10px;
+        }
+        
+        .seach__input {
+          width: 304px;
+          height: 30px;
+          text-align: center;
+          font-size: $fs-m + 2px;
+          border: none;
+          background: inherit;
+          border-radius: $border-radius-seach;
+          background: rgba(255, 255, 255, 0.1);
+        }
+    }
+
+    &__nav {
+        @include d-flex(center, center);
+        flex-direction: row;
+        padding: $padding-m;
+        gap: 40px;
+        width: 941px;
+        height: 30px;
+  
+        font-style: normal;
+        font-weight: 500;
+        font-size: 17px;
+        line-height: 30px;
+        color: $primary-text-color;
+  
+        .nav-link {
+          display: flex;
+          flex-direction: row;
+          width: 30%;
+        }
+  
+        .header__button {
+          @include d-flex(center, center);
+          flex-direction: row;
+          width: 177px;
+          height: 50px;
+          padding: $padding-xs $padding-s;
+          gap: 10px;
+          font-style: normal;
+          font-weight: 500;
+          font-size: $fs-m + 2px;
+          line-height: 30px;
+          @include set_gradient(214.02deg, $backgraund-button-active-first, $backgraund-button-active-secondary);
+          border-radius: $border-radius-button;
+          color: $primary-text-color;
+        }
+      
+    }
+}

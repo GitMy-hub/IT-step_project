@@ -1,0 +1,16 @@
+@mixin d-flex($jc , $ai) {
+  display: flex;
+  justify-content: $jc;
+  align-items: $ai;
+}
+
+@mixin set_gradient($deg, $fc , $sc){
+  background: linear-gradient($deg, $fc, $sc);
+}
+
+@mixin grid-sys($row-amount, $col-amount, $row-fr: 1fr, $col-fr: 1fr) {
+  display: grid;
+  grid-template-columns: repeat($col-amount, $col-fr);
+  grid-template-rows: repeat($row-amount, $row-fr);
+}
+

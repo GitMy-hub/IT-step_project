@@ -1,0 +1,2 @@
+import "./issues.scss";
+

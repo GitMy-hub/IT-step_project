@@ -1,3 +1,52 @@
-@import './scss/variables.scss';
-@import './scss/mixings.scss';
+@import "./scss/variables.scss";
+@import "./scss/mixings.scss";
 
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+li {
+  list-style-type: none;
+}
+.navigator {
+  width: 100px;
+  height: 300px;
+  background-color: aqua;
+  transition: 500ms;
+  &:hover,
+  .name {
+    background-color: aqua;
+    background-position: right;
+    width: 250px;
+    transition: 500ms;
+    display: block;
+
+    color: brown;
+  }
+  .nav-logo {
+    @include d-flex(center, center);
+    & img {
+      width: 70px;
+    }
+  }
+  .navbar-menu {
+    & ul {
+      & li {
+        & a {
+          margin-left: 20px;
+          & span {
+            display: none;
+            margin-left: 60px;
+          }
+        }
+      }
+    }
+  }
+}

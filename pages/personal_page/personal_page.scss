@@ -23,7 +23,6 @@ li {
   position: fixed;
   &:hover {
     background-color: aqua;
-    background-position: right;
     width: 220px;
     transition: 300ms;
   }
@@ -33,6 +32,7 @@ li {
   &:hover img {
     left: 0px;
   }
+
   &:hover .arrow {
     display: none;
   }
@@ -59,6 +59,7 @@ li {
           margin-top: 50px;
           height: 25px;
           width: 200px;
+
           & i {
             width: 10px;
           }
@@ -66,6 +67,10 @@ li {
             position: relative;
             margin-left: 50px;
             right: 350px;
+            &:hover {
+              border-bottom: 1px solid;
+              border-width: 2px;
+            }
           }
         }
       }

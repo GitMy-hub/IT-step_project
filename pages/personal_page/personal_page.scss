@@ -15,11 +15,22 @@ a {
 li {
   list-style-type: none;
 }
+::-webkit-scrollbar {
+  width: 15px;
+}
+::-webkit-scrollbar-track {
+  background-color: #483d8b;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #7b68ee;
+  border-radius: 10px;
+  border: 3px solid;
+}
 
 .navigator {
   width: 70px;
   height: 100vh;
-  background-color: aqua;
+  background-color: #7c70cc;
   transition: $transition-speed;
   position: fixed;
   &:hover {
@@ -78,17 +89,7 @@ li {
     }
   }
 }
-::-webkit-scrollbar {
-  width: 15px;
-}
-::-webkit-scrollbar-track {
-  background-color: #483d8b;
-}
-::-webkit-scrollbar-thumb {
-  background-color: #7b68ee;
-  border-radius: 10px;
-  border: 3px solid;
-}
+
 .profile-container {
   float: right;
   width: 300px;
@@ -171,5 +172,8 @@ li {
         }
       }
     }
+  }
+  &_box-footer {
+    height: 100px;
   }
 }

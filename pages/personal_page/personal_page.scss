@@ -15,6 +15,7 @@ a {
 li {
   list-style-type: none;
 }
+
 .navigator {
   width: 70px;
   height: 100vh;
@@ -77,20 +78,32 @@ li {
     }
   }
 }
+::-webkit-scrollbar {
+  width: 15px;
+}
+::-webkit-scrollbar-track {
+  background-color: #483d8b;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #7b68ee;
+  border-radius: 10px;
+  border: 3px solid;
+}
 .profile-container {
   float: right;
   width: 300px;
   height: 100%;
   background-color: #483d8b;
-
   &_box {
     @include d-flex(none, none);
     flex-direction: column;
     height: 500px;
+
     background-color: #483d8b;
     &-settings {
       @include d-flex(center, center);
       height: 50px;
+      border-bottom: 1px solid;
       & nav {
         & ul {
           @include d-flex(none, none);
@@ -122,6 +135,9 @@ li {
   &_box-social {
     @include d-flex(center, center);
     flex-direction: column;
+    & a {
+      margin-top: $margin-xs;
+    }
     .social-status {
       @include d-flex(space-between, center);
       width: 260px;
@@ -130,7 +146,6 @@ li {
     }
     .social-box {
       @include d-flex(left, center);
-      margin-top: $margin-xs;
       border: 1px solid;
       padding: $margin-xs;
       border-radius: $margin-xs;

@@ -16,34 +16,56 @@ li {
   list-style-type: none;
 }
 .navigator {
-  width: 100px;
-  height: 300px;
+  width: 70px;
+  height: 100vh;
   background-color: aqua;
-  transition: 500ms;
-  &:hover,
-  .name {
+  transition: 400ms;
+  position: fixed;
+  &:hover {
     background-color: aqua;
     background-position: right;
-    width: 250px;
-    transition: 500ms;
-    display: block;
-
-    color: brown;
+    width: 220px;
+    transition: 300ms;
   }
+  &:hover span {
+    left: 0px;
+  }
+  &:hover img {
+    left: 0px;
+  }
+  &:hover .arrow {
+    display: none;
+  }
+
   .nav-logo {
     @include d-flex(center, center);
     & img {
+      position: relative;
       width: 70px;
+      right: 350px;
+    }
+    & .arrow {
+      position: relative;
+      right: 37px;
     }
   }
   .navbar-menu {
     & ul {
       & li {
         & a {
+          display: flex;
+          align-items: center;
           margin-left: 20px;
+          margin-top: 50px;
+          height: 25px;
+          width: 200px;
+          & i {
+            width: 10px;
+          }
           & span {
-            display: none;
-            margin-left: 60px;
+            position: relative;
+            margin-left: 50px;
+            right: 350px;
           }
         }
       }

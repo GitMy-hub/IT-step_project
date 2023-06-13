@@ -1,3 +1,221 @@
-@import './scss/variables.scss';
-@import './scss/mixings.scss';
+@import "./scss/variables.scss";
+@import "./scss/mixings.scss";
 
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+li {
+  list-style-type: none;
+}
+::-webkit-scrollbar {
+  width: 15px;
+}
+::-webkit-scrollbar-track {
+  background-color: #483d8b;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #7b68ee;
+  border-radius: 10px;
+  border: 3px solid;
+}
+
+.navigator {
+  width: 70px;
+  height: 100vh;
+  background-color: #7c70cc;
+  transition: $transition-speed;
+  position: fixed;
+  z-index: 2;
+  &:hover {
+    background-color: aqua;
+    width: 220px;
+    transition: $transition-speed-low;
+  }
+  &:hover span {
+    left: 0px;
+  }
+  &:hover img {
+    left: 0px;
+  }
+
+  &:hover .arrow {
+    display: none;
+  }
+
+  .nav-logo {
+    @include d-flex(center, center);
+    & img {
+      position: relative;
+      width: 70px;
+      right: 350px;
+    }
+    & .arrow {
+      position: relative;
+      right: 37px;
+    }
+  }
+  .navbar-menu {
+    & ul {
+      & li {
+        & a {
+          display: flex;
+          align-items: center;
+          margin-left: $margin-s;
+          margin-top: $margin-xl;
+          height: 25px;
+
+          & i {
+            width: 10px;
+          }
+          & span {
+            font-size: $fs-m;
+            position: relative;
+            margin-left: $margin-xl;
+            right: 350px;
+            &:hover {
+              border-bottom: 1px solid;
+              border-width: 2px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.main-container {
+  &_header {
+    @include d-flex(center, center);
+    width: 100%;
+    height: 50px;
+    border-bottom: 1px solid;
+    background-color: #483d8b;
+    position: relative;
+    z-index: 1;
+    & input {
+      width: 500px;
+      height: 25px;
+      border-radius: 7px;
+      position: absolute;
+      background-color: #7b68ee;
+      &::placeholder {
+        color: white;
+        text-align: center;
+      }
+    }
+    & i {
+      position: relative;
+      left: 230px;
+    }
+  }
+}
+
+.profile-container {
+  position: relative;
+  z-index: 2;
+  float: right;
+  width: 300px;
+  height: 100%;
+  background-color: #483d8b;
+  &_box {
+    @include d-flex(none, none);
+    flex-direction: column;
+    height: 500px;
+
+    background-color: #483d8b;
+    &-settings {
+      @include d-flex(center, center);
+      height: 50px;
+      border-bottom: 1px solid;
+      border-left: 1px solid;
+      & nav {
+        & ul {
+          @include d-flex(none, none);
+          & li {
+            margin-left: 15px;
+            & a {
+              & i {
+                &:hover {
+                  transform: scale(1.2);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    &-wrapper {
+      @include d-flex(center, center);
+      flex-direction: column;
+      & img {
+        margin-top: 15px;
+        width: 300px;
+      }
+      & span {
+        margin-top: 20px;
+        font-size: $fs-l;
+        color: white;
+      }
+      & p {
+        margin-top: 10px;
+        font-size: $fs-m;
+        color: aliceblue;
+      }
+    }
+  }
+  &_box-social {
+    @include d-flex(center, center);
+    flex-direction: column;
+    & a {
+      margin-top: $margin-xs;
+    }
+    .social-status {
+      @include d-flex(space-between, center);
+      width: 260px;
+      margin-top: $margin-xs;
+      color: azure;
+    }
+    .social-box {
+      @include d-flex(left, center);
+      border: 1px solid;
+      padding: $margin-xs;
+      border-radius: $margin-xs;
+      width: 260px;
+      background-color: #7b68ee;
+      color: white;
+      transition: 300ms;
+      &:hover {
+        transform: scale(1.1);
+        transition: 100ms;
+      }
+      &_wrapper {
+        & img {
+          width: 50px;
+          border: 1px solid;
+          border-radius: 50%;
+          padding: 3px;
+        }
+      }
+      &_profile {
+        margin-left: $margin-s;
+        & span {
+          font-size: 25px;
+        }
+        & p {
+          font-size: $fs-s;
+          color: aliceblue;
+        }
+      }
+    }
+  }
+  &_box-footer {
+    height: 100px;
+  }
+}
